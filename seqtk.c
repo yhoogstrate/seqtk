@@ -1043,7 +1043,7 @@ int stk_sample(int argc, char *argv[])
 		return 1;
 	}
 	frac = atof(argv[optind+1]);
-	if (frac > 1.) num = (uint64_t)(frac + .499), frac = 0.;
+	if (frac >= 1.) num = (uint64_t)(frac + .499), frac = 0.;
 	else if (twopass) {
 		fprintf(stderr, "[W::%s] when sampling a fraction, option -2 is ignored.", __func__);
 		twopass = 0;
